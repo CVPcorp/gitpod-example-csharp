@@ -1,8 +1,10 @@
-image: gitpod/workspace-dotnet
+image: mcr.microsoft.com/dotnet/sdk:5.0
 
 tasks:
-  - init: dotnet build
-    command: dotnet run
+  - name: DOTNET
+  - init: |
+          cp -r /usr/share/dotnet /workspace
+    command: /workspace/dotnet/dotnet watch run
 
 vscode:
   extensions:
