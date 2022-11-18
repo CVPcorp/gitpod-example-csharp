@@ -1,11 +1,15 @@
-image: mcr.microsoft.com/dotnet/sdk:5.0
+image: gitpod/workspace-dotnet
 
 tasks:
-  - name: DOTNET
-  - init: |
-          cp -r /usr/share/dotnet /workspace
-    command: /workspace/dotnet/dotnet watch run
+  - name: front-end
+    init: echo 'starting react backend server'
+    command: bash startup.sh
 
 vscode:
   extensions:
     - muhammad-sammy.csharp
+    - projektanker.code-butler
+    - jsw.csharpextensions
+    - fernandoescolar.vscode-solution-explorer
+    - TabNine.tabnine-vscode
+    - Trelent.trelent
